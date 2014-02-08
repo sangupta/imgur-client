@@ -1,0 +1,15 @@
+{
+    "data": {
+        "id": 614,
+        "from": "joshTest",
+        "account_id": 384077,
+        "recipient_account_id": 384077,
+        "subject": null,
+        "body": "Hello, World",
+        "timestamp": "5 days ago",
+        "parent_id": 614
+    },
+    "success": true,
+    "status": 200
+}
+

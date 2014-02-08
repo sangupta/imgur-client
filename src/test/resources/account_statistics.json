@@ -1,0 +1,13 @@
+{
+    "data" : {
+        "total_images"         : 17,
+        "total_albums"         : 1,
+        "disk_used"            : "8.92 MB",
+        "bandwidth_used"       : "5.73 GB"
+        "top_images"           : [],
+        "top_albums"           : [],
+        "top_gallery_comments" : [],
+    }
+    "success" : true,
+    "status" : 200
+}

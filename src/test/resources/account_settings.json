@@ -1,0 +1,18 @@
+{
+    "data": {
+        "email": "josh@imgur.com",
+        "high_quality": true,
+        "public_images": false,
+        "album_privacy": "secret",
+        "pro_expiration": false,
+        "accepted_gallery_terms": true,
+        "active_emails": [],
+        "messaging_enabled": true,
+        "blocked_users": [{
+            "blocked_id" : 384077,
+            "blocked_url": "joshTest"
+        }]
+    },
+    "success": true,
+    "status": 200
+}
