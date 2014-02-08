@@ -21,6 +21,12 @@
 
 package com.sangupta.imgur.api.model;
 
+/**
+ * Value object containing gallery image.
+ * 
+ * @author sangupta
+ *
+ */
 public class GalleryImage {
 	
 	public String id;

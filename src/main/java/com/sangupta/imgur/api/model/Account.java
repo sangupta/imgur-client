@@ -22,6 +22,7 @@
 package com.sangupta.imgur.api.model;
 
 /**
+ * Value object containing account details.
  * 
  * @author sangupta
  *

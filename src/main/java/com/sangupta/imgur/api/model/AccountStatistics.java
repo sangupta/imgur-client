@@ -24,6 +24,7 @@ package com.sangupta.imgur.api.model;
 import java.util.List;
 
 /**
+ * Value object containing account statistics.
  * 
  * @author sangupta
  *

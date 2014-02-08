@@ -22,6 +22,7 @@
 package com.sangupta.imgur.api.model;
 
 /**
+ * Value object containing details of a blocked user.
  * 
  * @author sangupta
  *

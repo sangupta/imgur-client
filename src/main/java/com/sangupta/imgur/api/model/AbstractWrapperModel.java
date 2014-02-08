@@ -22,6 +22,8 @@
 package com.sangupta.imgur.api.model;
 
 /**
+ * Abstract wrapper containing API responses.
+ * 
  * @author sangupta
  *
  */

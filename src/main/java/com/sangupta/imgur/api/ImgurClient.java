@@ -35,18 +35,35 @@ import com.sangupta.jerry.util.GsonUtils;
 import com.sangupta.jerry.util.UriUtils;
 
 /**
+ * A strongly-typed client that helps access various end points of
+ * the imgur.com API.
  * 
  * @author sangupta
  *
  */
 public class ImgurClient {
 	
+	/**
+	 * The base URL for version 3 of the API
+	 */
 	public static final String BASE_URI = "https://api.imgur.com/3/";
 	
+	/**
+	 * The clientID as provided by imgur
+	 */
 	private String clientID;
 	
+	/**
+	 * The client secret as provided by imgur
+	 */
 	private String clientSecret;
 	
+	/**
+	 * Construct a new {@link ImgurClient} for the given key and secret.
+	 * 
+	 * @param clientID
+	 * @param clientSecret
+	 */
 	public ImgurClient(String clientID, String clientSecret) {
 		this.clientID = clientID;
 		this.clientSecret = clientSecret;
@@ -56,6 +73,14 @@ public class ImgurClient {
 	// ALBUM METHODS
 	// ------------------------------
 	
+	/**
+	 * Get the album details for the given album ID.
+	 * 
+	 * @param id
+	 *            the id of the album
+	 * 
+	 * @return the {@link AlbumWrapper} instance containing the details
+	 */
 	public AlbumWrapper getAlbumDetails(String id) {
 		return get("/album/" + id, AlbumWrapper.class);
 	}
@@ -64,10 +89,26 @@ public class ImgurClient {
 	// GALLERY METHODS
 	// ------------------------------
 
+	/**
+	 * Get the gallery details for the given gallery ID.
+	 * 
+	 * @param id
+	 *            the id of the gallery
+	 * 
+	 * @return the {@link GalleryAlbumWrapper} instance containing the details
+	 */
 	public GalleryAlbumWrapper getGalleryAlbum(String id) {
 		return get("/gallery/album/" + id, GalleryAlbumWrapper.class);
 	}
 
+	/**
+	 * Get details of the given gallery image.
+	 * 
+	 * @param id
+	 *            the id of the gallery image
+	 * 
+	 * @return the {@link GalleryImageWrapper} instance containing the details
+	 */
 	public GalleryImageWrapper getGalleryImage(String id) {
 		return get("/gallery/image/" + id, GalleryImageWrapper.class);
 	}
@@ -77,12 +118,37 @@ public class ImgurClient {
 	// USEFUL ABSTRACTIONS
 	// ------------------------------
 	
+	/**
+	 * Hit the base url and parse the response into the given class type
+	 * instance
+	 * 
+	 * @param path
+	 *            the URL to hit
+	 * 
+	 * @param classOfT
+	 *            the object type into which the details need to be populated
+	 * 
+	 * @return the instance of the type with populated details
+	 */
 	protected <T> T get(String path, Class<T> classOfT) {
 		String url = UriUtils.addWebPaths(BASE_URI, path + ".json");
 		WebRequest request = WebInvoker.getWebRequest(url, WebRequestMethod.GET);
 		return invoke(request, classOfT);
 	}
 	
+	/**
+	 * Execute the given {@link WebRequest} and populate the result parsing JSON
+	 * response into the given object type
+	 * 
+	 * @param request
+	 *            the {@link WebRequest} to execute
+	 * 
+	 * @param classOfT
+	 *            the object type into which the details need to be populated
+	 * 
+	 * @return the instance of the type with populated details
+	 * 
+	 */
 	protected <T> T invoke(WebRequest request, Class<T> classOfT) {
 		request.addHeader(HttpHeaderName.AUTHORIZATION, "Client-ID " + this.clientID).cookiePolicy(CookiePolicy.BEST_MATCH).followRedirects();
 		

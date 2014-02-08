@@ -23,6 +23,12 @@ package com.sangupta.imgur.api.model;
 
 import java.util.List;
 
+/**
+ * Value object containing details of a gallery album.
+ * 
+ * @author sangupta
+ *
+ */
 public class GalleryAlbum {
 	
 	public String id;
