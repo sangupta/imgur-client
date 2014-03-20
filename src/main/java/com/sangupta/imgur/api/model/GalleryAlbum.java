@@ -3,7 +3,7 @@
  * imgur-client: Java Client for imgur.com API
  * Copyright (c) 2014, Sandeep Gupta
  * 
- * http://www.sangupta/projects/imgur-client
+ * http://sangupta.com/projects/imgur-client
  *  
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
